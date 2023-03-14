@@ -1,14 +1,16 @@
-const INPUT = document.querySelector("input");
+const input = document.querySelector('input')
 
-const double = document.querySelector("#duplicateField");
+const button = document.querySelector('button')
 
-INPUT.addEventListener("input", updateValue);
+const duplicateField = document.querySelector('#duplicateField')
 
-function updateValue(e) {
-  double.textContent = e.target.value;
-};
-
-document.querySelector('button').addEventListener('click', (event) => {
-  console.log(double);
+input.addEventListener('input', function (event) {
   event.preventDefault();
-});
+  duplicateField.textContent = input.value;
+})
+
+button.addEventListener('click', function (event) {
+  console.log(input.value)
+  input.value = "";
+  duplicateField.textContent = "";
+})
